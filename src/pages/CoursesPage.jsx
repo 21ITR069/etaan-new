@@ -1,24 +1,26 @@
 import React from 'react';
 import CourseCatalogSection from '../components/CourseCatalogSection';
-import './CoursesPage.css';
+import './CoursesPage_Isolated.css';
 import HelpChoosingSection from '../components/HelpChoosingSection';
 
 const CoursesPage = () => {
   return (
-    <div className="courses-page-container">
-      {/* Header Section */}
-      <div className="catalog-header-area">
-        <div className="catalog-badge">PROFESSIONAL TRAINING</div>
-        <h1 className="section-title">Course Catalog</h1>
-        <p className="section-subtitle">
+    <div className="courses-page-root">
+      {/* Header Hero Section */}
+      <section className="courses-hero-section">
+        <span className="courses-badge">PROFESSIONAL TRAINING</span>
+        <h1 className="courses-title">Course Catalog</h1>
+        <p className="courses-subtitle">
           Browse our comprehensive range of WSQ-certified security training programs
         </p>
-      </div>
+      </section>
       
       {/* Main Catalog Section */}
-      <CourseCatalogSection />
+      <div className="courses-catalog-container">
+        <CourseCatalogSection />
+      </div>
 
-      {/* Help Section */}
+      {/* Help Choosing Section */}
       <HelpChoosingSection />
     </div>
   );
