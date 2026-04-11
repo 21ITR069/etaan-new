@@ -1,6 +1,7 @@
 import React from 'react';
 import CourseCatalogSection from '../components/CourseCatalogSection';
-import './CoursesPage_Isolated.css';
+import './CoursesPage.css';
+import './CoursesHero.css';
 import HelpChoosingSection from '../components/HelpChoosingSection';
 
 const CoursesPage = () => {
@@ -16,7 +17,7 @@ const CoursesPage = () => {
       </section>
       
       {/* Main Catalog Section */}
-      <div className="courses-catalog-container">
+      <div className="courses-catalog-wrapper">
         <CourseCatalogSection />
       </div>
 

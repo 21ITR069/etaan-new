@@ -1,35 +1,19 @@
-/* ============================================================
-   COURSES PAGE - ISOLATED CSS (BUG-FREE & SCALABLE)
-   ============================================================ */
+/* ===================== COURSES HERO MODULAR CSS ===================== */
 
-/* Force Reset for this page context */
-.courses-page-root {
-  width: 100% !important;
-  max-width: 100vw !important;
-  overflow-x: hidden !important;
-  position: relative;
-  background: #ffffff;
-}
-
-/* 1. Header Hero Section (The Dark Navy Top) */
 .courses-hero-section {
-  width: 100vw !important;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
   background: #0F172A;
-  padding: 80px 20px 60px 20px;
+  padding: 100px 20px 80px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   color: #ffffff;
+  position: relative;
+  overflow: hidden;
   z-index: 10;
 }
 
-/* Soft Radial Glow Effect */
 .courses-hero-section::before {
   content: "";
   position: absolute;
@@ -85,22 +69,6 @@
   font-weight: 400;
 }
 
-/* 2. Catalog Section (The White Content Area) */
-.courses-catalog-container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 60px 24px;
-  background: #ffffff;
-}
-
-/* Bug Fix: Ensure no horizontal scroll */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Responsive Overrides */
 @media (max-width: 1024px) {
   .courses-title {
     font-size: 52px !important;
@@ -109,8 +77,13 @@ html, body {
 
 @media (max-width: 768px) {
   .courses-hero-section {
-    padding: 60px 20px 50px 20px;
+    padding: 80px 20px 60px 20px;
     width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }
 
   .courses-title {
@@ -122,17 +95,9 @@ html, body {
     font-size: 16px !important;
     color: rgba(255, 255, 255, 0.6);
   }
-
-  .courses-catalog-container {
-    padding: 40px 16px;
-  }
 }
 
 @media (max-width: 480px) {
-  .courses-hero-section {
-    padding: 50px 16px 40px 16px;
-  }
-  
   .courses-title {
     font-size: 32px !important;
   }

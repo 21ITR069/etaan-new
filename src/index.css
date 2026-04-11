@@ -130,12 +130,17 @@ body {
 /* Header Responsive */
 @media (max-width: 1024px) {
   .nav-links, .desktop-only {
-    display: none;
+    display: none !important;
   }
   
   .mobile-menu-btn {
-    display: block;
-    margin-right: -10px; /* Adjust for better alignment */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: -10px;
+    color: var(--primary) !important;
   }
 }
 
