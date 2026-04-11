@@ -127,6 +127,18 @@ body {
   opacity: 0.9;
 }
 
+/* Header Responsive */
+@media (max-width: 1024px) {
+  .nav-links, .desktop-only {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+    margin-right: -10px; /* Adjust for better alignment */
+  }
+}
+
 /* ===================== HERO ===================== */
 /*
   Figma: 1920 x 725px frame.
@@ -1647,59 +1659,6 @@ body {
 .courses-section {
   padding: 60px 0;
 }
-  .catalog-header-area {
-    padding: 80px 10vw 40px 10vw;
-    background: #F8FAFC;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    color: #0F172A;
-  }
-
-  .catalog-header-area::before,
-  .catalog-header-area::after {
-    display: none; /* Remove dark glows */
-  }
-
-  .catalog-badge {
-    position: relative;
-    z-index: 2;
-    background: #DBEAFE;
-    color: #2563EB;
-    border: none;
-    padding: 8px 18px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    border-radius: 100px;
-    margin-bottom: 20px;
-    display: inline-block;
-  }
-
-  .catalog-header-area .section-title {
-    position: relative;
-    z-index: 2;
-    font-family: inherit;
-    font-size: 44px !important;
-    line-height: 1.2;
-    font-weight: 800;
-    color: #0F172A;
-    margin-bottom: 12px;
-    letter-spacing: -0.01em;
-  }
-
-  .catalog-header-area .section-subtitle {
-    position: relative;
-    z-index: 2;
-    font-size: 16px !important;
-    color: #64748B;
-    max-width: 600px;
-    margin-left: 0;
-    line-height: 1.5;
-  }
   .section-header {
     gap: 16px;
     margin-left: 20px;

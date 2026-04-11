@@ -1,5 +1,6 @@
 import React from 'react';
 import CourseCatalogSection from '../components/CourseCatalogSection';
+import './CoursesPage.css';
 import HelpChoosingSection from '../components/HelpChoosingSection';
 
 const CoursesPage = () => {

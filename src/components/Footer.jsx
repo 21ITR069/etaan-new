@@ -65,10 +65,10 @@ const Footer = () => {
         <div className="footer-col-links">
           <h3 className="footer-col-title">Quick Links</h3>
           <ul className="footer-link-list">
-            <li><Link to="/courses">Browse Courses</Link></li>
-            <li><Link to="/schedule">Course Schedule</Link></li>
-            <li><Link to="/funding">Funding Options</Link></li>
-            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/courses">All Courses</Link></li>
+            <li><Link to="/courses?category=Security">Security Training</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
 
