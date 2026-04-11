@@ -3,7 +3,6 @@
 .courses-page-root {
   width: 100% !important;
   max-width: 100vw !important;
-  overflow-x: hidden !important;
   position: relative;
   background: #ffffff;
   padding-top: 65px; /* NAVBAR CLEARANCE */

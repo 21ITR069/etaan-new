@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { courses } from '../data/coursesData';
-import './CourseCatalogSection.css';
+import './CourseCatalog_Isolated.css';
 
 // Custom SVG Icons
 const IconFilter = () => (
@@ -44,7 +44,6 @@ const CourseCatalogSection = () => {
     'Elective Courses'
   ];
 
-
   const filteredCourses = courses.filter(course => {
     const matchesFilter = activeFilter === 'All Courses' || 
                          course.level.toLowerCase() === activeFilter.toLowerCase();
@@ -78,19 +77,19 @@ const CourseCatalogSection = () => {
   );
 
   return (
-    <div className="catalog-container">
-      <div className="catalog-layout">
-        <aside className="catalog-sidebar">
-          <div className="filter-card">
-            <div className="filter-header">
+    <div className="catalog-root-isolated">
+      <div className="catalog-layout-main">
+        <aside className="catalog-sidebar-isolated">
+          <div className="filter-box-card">
+            <div className="filter-title-row">
               <IconFilter />
               <h3>Filters</h3>
             </div>
-            <div className="filter-list">
+            <div className="filter-items-list">
               {filters.map((filter) => (
                 <button
                   key={filter}
-                  className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                  className={`filter-action-btn ${activeFilter === filter ? 'active' : ''}`}
                   onClick={() => setActiveFilter(filter)}
                 >
                   {filter}
@@ -100,7 +99,7 @@ const CourseCatalogSection = () => {
           </div>
         </aside>
 
-        <div className="catalog-content">
+        <div className="catalog-content-main">
           <div className="search-box-card">
             <div className="search-input-wrapper">
               <IconSearch />
@@ -141,7 +140,7 @@ const CourseCatalogSection = () => {
             </div>
           </div>
 
-          <div className="courses-grid">
+          <div className="catalog-grid-system">
             {filteredCourses.length > 0 ? (
               filteredCourses.map((course) => (
                 <CourseCard key={course.id} course={course} />

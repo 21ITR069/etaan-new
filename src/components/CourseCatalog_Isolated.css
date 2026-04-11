@@ -1,34 +1,37 @@
 /* ============================================================
-   COURSE CATALOG SECTION - PREMIUM DESKTOP LAYOUT
+   COURSE CATALOG - FULL WIDTH & ISOLATED CSS
    ============================================================ */
 
-.catalog-container {
-  width: 100%;
-  padding: 60px 4vw 80px 4vw;
+.catalog-root-isolated {
+  width: 100vw;
   background: #F8FAFC;
   position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 60px 40px;
 }
 
-.catalog-layout {
+.catalog-layout-main {
+  width: 100%;
   display: flex;
   gap: 40px;
-  width: 100%;
-  margin: 0;
   align-items: flex-start;
   position: relative;
 }
 
-/* Sidebar Styles */
-.catalog-sidebar {
+/* Sidebar: STICKY & SCROLL-PINNED */
+.catalog-sidebar-isolated {
   width: 300px;
   flex-shrink: 0;
   position: sticky;
-  top: 85px; /* Clear navbar and add space */
-  z-index: 100;
+  top: 100px; /* Precise distance from navbar */
+  z-index: 50;
   height: fit-content;
 }
 
-.filter-card {
+.filter-box-card {
   background: #ffffff;
   padding: 30px 0;
   border-radius: 24px;
@@ -36,7 +39,7 @@
   border: 1px solid rgba(226, 232, 240, 0.5);
 }
 
-.filter-header {
+.filter-title-row {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -45,55 +48,54 @@
   border-bottom: 1px solid #F1F5F9;
 }
 
-.filter-header h3 {
+.filter-title-row h3 {
   font-weight: 700;
   font-size: 19px;
   color: #1E293B;
-  letter-spacing: -0.01em;
 }
 
-.filter-list {
+.filter-items-list {
   display: flex;
   flex-direction: column;
   padding: 0 16px;
   gap: 4px;
 }
 
-.filter-btn {
+.filter-action-btn {
   width: 100%;
   padding: 14px 20px;
   text-align: left;
   background: transparent;
   border: none;
-  border-radius: 14px;
+  border-radius: 12px;
   font-weight: 600;
   font-size: 14px;
   color: #64748B;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
 }
 
-.filter-btn:hover {
+.filter-action-btn:hover {
   background: #F8FAFC;
   color: #2563EB;
   padding-left: 24px;
 }
 
-.filter-btn.active {
+.filter-action-btn.active {
   background: #2563EB;
   color: #ffffff;
-  box-shadow: 0px 8px 20px rgba(37, 99, 235, 0.15);
+  box-shadow: 0px 8px 20px rgba(37, 99, 235, 0.2);
 }
 
-/* Content Area Styles */
-.catalog-content {
+/* Content Area */
+.catalog-content-main {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-/* Search Box Card */
+/* Redesigned Search Bar */
 .search-box-card {
   background: #ffffff;
   padding: 24px;
@@ -140,10 +142,6 @@
   gap: 24px;
 }
 
-.alert-icon-wrapper {
-  flex-shrink: 0;
-}
-
 .alert-circle-bg {
   width: 48px;
   height: 48px;
@@ -183,18 +181,8 @@
   color: #64748B;
 }
 
-/* Course Grid System */
-.results-header {
-  margin-bottom: 8px;
-}
-
-.showing-results {
-  font-size: 15px;
-  color: #64748B;
-  font-weight: 500;
-}
-
-.courses-grid {
+/* Grid Override */
+.catalog-grid-system {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
@@ -314,38 +302,42 @@
   box-shadow: 0px 4px 12px rgba(37, 99, 235, 0.3);
 }
 
-/* Responsive Handling */
+/* Responsive Overrides */
 @media (max-width: 1100px) {
-  .courses-grid {
+  .catalog-grid-system {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 900px) {
-  .catalog-layout {
+  .catalog-root-isolated {
+    padding: 40px 20px;
+  }
+  
+  .catalog-layout-main {
     flex-direction: column;
     gap: 30px;
   }
   
-  .catalog-sidebar {
+  .catalog-sidebar-isolated {
     width: 100%;
-    position: static;
+    position: relative;
+    top: 0;
   }
   
-  .filter-list {
+  .filter-items-list {
     flex-direction: row;
     overflow-x: auto;
-    padding: 0 20px 10px 20px;
-    scrollbar-width: none;
+    padding-bottom: 10px;
   }
   
-  .filter-list::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .filter-btn {
-    white-space: nowrap;
+  .filter-action-btn {
     width: auto;
+    white-space: nowrap;
+  }
+
+  .catalog-grid-system {
+    grid-template-columns: 1fr;
   }
 
   .alert-card {
