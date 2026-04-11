@@ -6,50 +6,53 @@ import bannerImg from '../assets/banner img.png';
 const Hero = () => {
   return (
     <section className="hero-section">
-      {/* Badge */}
-      <motion.div
-        className="hero-badge"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Award size={17} color="#112C3F" />
-        <span>Singapore's AI-powered security career consultancy</span>
-      </motion.div>
+      {/* Text Content Container */}
+      <div className="hero-text-content">
+        {/* Badge */}
+        <motion.div
+          className="hero-badge"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Award size={17} color="#112C3F" />
+          <span>Singapore's AI-powered security career consultancy</span>
+        </motion.div>
 
-      {/* Title */}
-      <motion.h1
-        className="hero-title"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        Your trusted partner for a licensed security career
-      </motion.h1>
+        {/* Title */}
+        <motion.h1
+          className="hero-title"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          Your trusted partner for a licensed security career
+        </motion.h1>
 
-      {/* Paragraph */}
-      <motion.p
-        className="hero-description"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        Starting a career in security can feel overwhelming — multiple courses,
-        government requirements, and unclear career paths. Etaan simplifies
-        everything. We combine expert human guidance with AI-powered tools so
-        you take the right steps, the first time.
-      </motion.p>
+        {/* Paragraph */}
+        <motion.p
+          className="hero-description"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Starting a career in security can feel overwhelming — multiple courses,
+          government requirements, and unclear career paths. Etaan simplifies
+          everything. We combine expert human guidance with AI-powered tools so
+          you take the right steps, the first time.
+        </motion.p>
 
-      {/* Buttons */}
-      <motion.div
-        className="hero-buttons"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      >
-        <button className="btn-start">Start my security career</button>
-        <button className="btn-talk">Talk to Etaan AI</button>
-      </motion.div>
+        {/* Buttons */}
+        <motion.div
+          className="hero-buttons"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <button className="btn-start">Start my security career</button>
+          <button className="btn-talk">Talk to Etaan AI</button>
+        </motion.div>
+      </div>
 
       {/* Banner Image — Figma: left:910 top:147 w:1010 h:577 */}
       <motion.img

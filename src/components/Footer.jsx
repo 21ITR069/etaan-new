@@ -1,84 +1,109 @@
 import React from 'react';
-import { Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+// Simple SVG Icons to replace Lucide
+const IconMail = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+);
+const IconPhone = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+);
+const IconMapPin = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+);
+const IconSend = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+);
+const IconFacebook = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+);
+const IconLinkedin = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+);
+const IconChat = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+);
 
 const Footer = () => {
   return (
     <footer className="site-footer">
-      <div className="footer-top-row">
-        <div className="footer-logo">
-          <div className="logo-placeholder">
-            <span className="logo-icon">☒</span>
-            <span className="logo-text">Logo</span>
+      <div className="footer-content">
+        {/* Left Column: Company & Newsletter */}
+        <div className="footer-col-main">
+          <h2 className="footer-brand">ETANN Consultants</h2>
+          <p className="footer-brand-desc">
+            Singapore's premier provider of WSQ-certified security training courses. 
+            Empowering security professionals with the skills and knowledge to excel in their careers.
+          </p>
+          
+          <div className="newsletter-section">
+            <h3 className="newsletter-title">Subscribe to Our Newsletter</h3>
+            <p className="newsletter-subtitle">Get updates on new courses, special offers, and industry insights.</p>
+            <div className="newsletter-form">
+              <input type="email" placeholder="Enter your email" />
+              <button className="btn-subscribe-new">
+                <IconSend />
+                <span>Subscribe</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="social-box-row">
+            <div className="social-box">
+              <IconChat />
+            </div>
+            <div className="social-box">
+              <IconFacebook />
+            </div>
+            <div className="social-box">
+              <IconLinkedin />
+            </div>
           </div>
         </div>
-        
-        <div className="footer-newsletter">
-          <div className="newsletter-input-box">
-            <Mail size={20} className="input-icon" />
-            <input type="email" placeholder="Enter your email to get the latest news..." />
+
+        {/* Center Column: Quick Links */}
+        <div className="footer-col-links">
+          <h3 className="footer-col-title">Quick Links</h3>
+          <ul className="footer-link-list">
+            <li><Link to="/courses">Browse Courses</Link></li>
+            <li><Link to="/schedule">Course Schedule</Link></li>
+            <li><Link to="/funding">Funding Options</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+          </ul>
+        </div>
+
+        {/* Right Column: Contact Info */}
+        <div className="footer-col-contact">
+          <h3 className="footer-col-title">Contact Us</h3>
+          <div className="contact-info-list">
+            <div className="contact-info-item">
+              <IconMail />
+              <span>info@etannedusg.com</span>
+            </div>
+            <div className="contact-info-item">
+              <IconPhone />
+              <span>+65 1234 5678</span>
+            </div>
+            <div className="contact-info-item">
+              <IconMapPin />
+              <span>
+                12 Arumugam Road, LTC Building B,<br />
+                #02-02G, Singapore 409958
+              </span>
+            </div>
           </div>
-          <button className="btn-subscribe">Subscribe</button>
         </div>
       </div>
 
-      <div className="footer-divider"></div>
-
-      <div className="footer-columns">
-        <div className="footer-col">
-          <h4 className="col-title">Column One</h4>
-          <ul className="col-links">
-            <li>Twenty One</li>
-            <li>Thirty Two</li>
-            <li>Fourty Three</li>
-            <li>Fifty Four</li>
-          </ul>
-        </div>
-        
-        <div className="footer-col">
-          <h4 className="col-title">Column Two</h4>
-          <ul className="col-links">
-            <li>Sixty Five</li>
-            <li>Seventy Six</li>
-            <li>Eighty Seven</li>
-            <li>Ninety Eight</li>
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h4 className="col-title">Column Three</h4>
-          <ul className="col-links">
-            <li>One Two</li>
-            <li>Three Four</li>
-            <li>Five Six</li>
-            <li>Seven Eight</li>
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h4 className="col-title">Join Us</h4>
-          <div className="social-links">
-            {/* YouTube */}
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            {/* Facebook */}
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            {/* Twitter */}
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-            {/* Instagram */}
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.681.014 15.273 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            {/* LinkedIn */}
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      <div className="footer-bottom">
+        <div className="footer-bottom-inner">
+          <p className="copyright-text">
+            © 2026 ETANN Consultants Pte Ltd. All rights reserved.
+          </p>
+          <div className="footer-legal">
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Service</Link>
           </div>
-        </div>
-      </div>
-
-      <div className="footer-divider"></div>
-
-      <div className="footer-bottom-row">
-        <p className="copyright">CompanyName @ 202X. All rights reserved.</p>
-        <div className="footer-legal-links">
-          <span>Eleven</span>
-          <span>Twelve</span>
-          <span>Thirteen</span>
         </div>
       </div>
     </footer>

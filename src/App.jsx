@@ -1,30 +1,32 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import SearchSection from './components/SearchSection';
-import CoursesSection from './components/CoursesSection';
-import ProcessSection from './components/ProcessSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import ContactScheduleSection from './components/ContactScheduleSection';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
+import ScrollToTop from './components/ScrollToTop';
+import HomePage from './pages/HomePage';
+import CoursesPage from './pages/CoursesPage';
+import CourseDetailPage from './pages/CourseDetailPage';
 import './index.css';
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <main>
-        <Hero />
-        <SearchSection />
-        <CoursesSection />
-        <ProcessSection />
-        <TestimonialsSection />
-        <ContactScheduleSection />
-      </main>
-      <Footer />
-      <Chatbot />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="app">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/course/:id" element={<CourseDetailPage />} />
+            {/* Add more routes here as needed */}
+          </Routes>
+        </main>
+        <Footer />
+        <Chatbot />
+      </div>
+    </Router>
   );
 }
 
